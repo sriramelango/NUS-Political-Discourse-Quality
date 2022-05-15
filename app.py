@@ -294,12 +294,12 @@ if page == "Home":
 
         text = st.text_area("Type here")
 
-        optionModel = st.selectbox("What model woud you like to utilize?",("Linear Regression","Gradient Boosting Classifier","Random Forest","Decision Tree","KNN","SDG Classifier", "Linear SVC"))
+        optionModel = st.selectbox("What model woud you like to utilize?",("Linear Regression","Random Forest","Decision Tree","KNN", "Gradient Boosting Classifier", "SDG Classifier", "Linear SVC"))
 
         submit = st.form_submit_button(label='Obtain Data')
 
         if text:
-            
+
             if optionModel == "Linear Regression":
 
                 scoresLR = obtainLinearRegression(text)
