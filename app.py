@@ -298,89 +298,91 @@ if page == "Home":
 
         submit = st.form_submit_button(label='Obtain Data')
 
-        if optionModel == "Linear Regression":
+        if text:
+            
+            if optionModel == "Linear Regression":
 
-            scoresLR = obtainLinearRegression(text)
+                scoresLR = obtainLinearRegression(text)
 
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresLR
-                )])
-
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
-
-        elif optionModel == "Gradient Boosting Classifier":
-
-            scoresGDC = obtainGradientBoostingClassifier(text)
-
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresGDC
-                )])
-
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
-
-        elif optionModel == "Random Forest":
-
-            scoresRF = obtainRandomForest(text)
-
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresRF
-                )])
-
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
-
-        elif optionModel == "Decision Tree":
-
-            scoresDT = obtainDecisionTree(text)
-
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresDT
-                )])
-
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
-
-        elif optionModel == "KNN":
-
-            scoresKNN = obtainKNN(text)
-
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresKNN
-                )])
-
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
-
-        elif optionModel == "SDG Classifier":
-                
-                scoresSDG = obtainSDG(text)
-    
                 fig = go.Figure(data=[go.Bar(
                     x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                    y= scoresSDG
+                    y= scoresLR
                     )])
-    
+
                 fig.update_layout(title_text='Score Predictions')
                 st.plotly_chart(fig, use_container_width=True)
 
-        elif optionModel == "Linear SVC":
+            elif optionModel == "Gradient Boosting Classifier":
 
-            scoresSVC = obtainLinearSVC(text)
+                scoresGDC = obtainGradientBoostingClassifier(text)
 
-            fig = go.Figure(data=[go.Bar(
-                x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
-                y= scoresSVC
-                )])
+                fig = go.Figure(data=[go.Bar(
+                    x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                    y= scoresGDC
+                    )])
 
-            fig.update_layout(title_text='Score Predictions')
-            st.plotly_chart(fig, use_container_width=True)
+                fig.update_layout(title_text='Score Predictions')
+                st.plotly_chart(fig, use_container_width=True)
+
+            elif optionModel == "Random Forest":
+
+                scoresRF = obtainRandomForest(text)
+
+                fig = go.Figure(data=[go.Bar(
+                    x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                    y= scoresRF
+                    )])
+
+                fig.update_layout(title_text='Score Predictions')
+                st.plotly_chart(fig, use_container_width=True)
+
+            elif optionModel == "Decision Tree":
+
+                scoresDT = obtainDecisionTree(text)
+
+                fig = go.Figure(data=[go.Bar(
+                    x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                    y= scoresDT
+                    )])
+
+                fig.update_layout(title_text='Score Predictions')
+                st.plotly_chart(fig, use_container_width=True)
+
+            elif optionModel == "KNN":
+
+                scoresKNN = obtainKNN(text)
+
+                fig = go.Figure(data=[go.Bar(
+                    x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                    y= scoresKNN
+                    )])
+
+                fig.update_layout(title_text='Score Predictions')
+                st.plotly_chart(fig, use_container_width=True)
+
+            elif optionModel == "SDG Classifier":
+                    
+                    scoresSDG = obtainSDG(text)
+        
+                    fig = go.Figure(data=[go.Bar(
+                        x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                        y= scoresSDG
+                        )])
+        
+                    fig.update_layout(title_text='Score Predictions')
+                    st.plotly_chart(fig, use_container_width=True)
+
+            elif optionModel == "Linear SVC":
+
+                scoresSVC = obtainLinearSVC(text)
+
+                fig = go.Figure(data=[go.Bar(
+                    x=['Constructivness', 'Justification', 'Relevance','Reciprocity', 'Empathy Respect', 'Uncivil Abuse'],
+                    y= scoresSVC
+                    )])
+
+                fig.update_layout(title_text='Score Predictions')
+                st.plotly_chart(fig, use_container_width=True)
 
 elif page == "Sentiment Analysis":
 
