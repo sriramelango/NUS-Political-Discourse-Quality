@@ -273,7 +273,6 @@ uncivil_model_SVC = pickle.load(open('ML Models/SVC/uncivil_model.pkl', 'rb'))
 
 ## Main Application
 st.set_page_config(layout="wide")
-st.set_option('deprecation.showPyplotGlobalUse', False)
 st.header("Dashboard: The quality of online political talk: evaluating machine learning approaches for measuring discourse quality")
 st.subheader("Abstract")
 st.markdown("""
