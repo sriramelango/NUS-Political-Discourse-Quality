@@ -11,3 +11,6 @@ Social media data creates an influx of data, where traditional methods for exami
 Paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3870554
 
 Github Repository: https://github.com/kj2013/twitter-deliberative-politics
+
+**Instructions**
+* This repository runs with Python 3.8 due to library dependencies on Python 3.8
